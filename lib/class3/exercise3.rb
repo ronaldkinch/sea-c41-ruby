@@ -32,3 +32,25 @@
 #   Nana: HOW'S SCHOOL GOING?
 #   BYE
 #   Nana: BYE SWEETIE!
+
+answer = 0 # nonstring initialization
+count = 1
+max_count = 3
+
+until answer == 'BYE' && count == max_count
+  if answer == 'BYE'
+    puts "Nana: HOW'S SCHOOL GOING?"
+    count += 1
+  else
+    count = 1
+    if answer == 0 # nonstring initialization
+      puts 'Nana: HI SWEETIE! GIVE NANA A KISS!'
+    elsif answer != answer.upcase
+      puts 'Nana: HUH?! SPEAK UP, SWEETIE!'
+    else
+      puts "Nana: NOT SINCE #{rand(21) + 1930}!"
+    end
+  end
+  answer = gets.chomp
+end
+puts 'Nana: BYE SWEETIE!'

@@ -8,3 +8,12 @@
 # divisible by 400 (e.g. 2000).
 #
 # TIP: I expect you to use a loop and a few modulo operations.
+
+def leap_year?(yr)
+  yr % 4 == 0 && yr % 100 != 0 || yr % 400 == 0
+end
+
+first = 1900
+last = 2000
+# (1900..2000).each { |y| puts y if Date.gregorian_year?(y) }
+(first..last).each { |year| puts year if leap_year?(year) }
