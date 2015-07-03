@@ -48,7 +48,7 @@ until answer == 'BYE' && count == max_count
     elsif answer != answer.upcase
       puts 'Nana: HUH?! SPEAK UP, SWEETIE!'
     else
-      puts "Nana: NOT SINCE #{rand(21) + 1930}!"
+      puts "Nana: NOT SINCE #{rand(1930..1950)}!"
     end
   end
   answer = gets.chomp
