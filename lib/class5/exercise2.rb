@@ -70,7 +70,8 @@
 #       '/Users/tim/sea-c21-ruby/lib/class5/'
 
 def database
-  '/change/me'
+  # Assumes database.yml in same directory as running program
+  File.absolute_path(File.dirname(__FILE__) + '/database.yml')
 end
 
 puts database
