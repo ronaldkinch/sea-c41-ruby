@@ -18,7 +18,8 @@
 # TIP: See your solution for Class 5 Exercise 2.
 
 def database
-  '/change/me'
+  # Assumes database.yml in same directory as running program
+  File.absolute_path(File.dirname(__FILE__) + '/database.yml')
 end
 
 puts database
