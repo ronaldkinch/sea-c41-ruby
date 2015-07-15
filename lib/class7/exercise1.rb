@@ -47,29 +47,41 @@
 
 class Integer
   def hours_in_seconds
-    # replace me
+    self * 60 * 60
   end
 end
 
 class String
   def indent(amount = 2)
-    amount # replace me
+    ' ' * amount + self
   end
 end
 
 class Integer
   # rubocop:disable MethodLength
   def to_roman
-    # replace me
+    return '' unless (1..9999).cover?(self)
+    roman_string = "\u2182" + "\u2181" + 'MDCLXVI'
+    to_s.rjust(4, '0').split('').map.with_index do |d, i|
+      earth = d.to_i % 5
+      heaven = d.to_i / 5
+      roman = roman_string[2 * i, 3]
+      group_str = heaven == 0 ? roman[1] : roman[0]
+
+      r = ''
+      earth.times { r += roman[2] }
+      r = (heaven == 0 ? '' : roman[1]) + r
+      r = earth == 4 ? roman[2] + group_str : r
+    end.join
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end
