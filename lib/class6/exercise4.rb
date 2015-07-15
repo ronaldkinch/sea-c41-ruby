@@ -37,7 +37,7 @@ def database
 end
 
 def load
-  YAML.load_file(database)
+  YAML.load_file(database) # ala Charlie
 end
 
 def display(pairs)

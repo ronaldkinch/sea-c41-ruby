@@ -31,7 +31,9 @@ def load
 end
 
 def update(key, value)
-  load[key.to_sym] = value
+  person = load
+  person[key.to_sym] = value
+  File.write(database, person.to_yaml)
 end
 
 input1, input2 = ARGV
